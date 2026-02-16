@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CoreLogic.Tests/CoreLogic.Tests.csproj" />
+  <Project Path="CoreLogic/CoreLogic.csproj" />
+</Solution>
