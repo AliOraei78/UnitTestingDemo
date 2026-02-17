@@ -30,3 +30,17 @@
   - Collection assertions: HaveCount, Contain, OnlyContain, ContainInOrder
 - Demonstrated chaining: .And for multiple assertions
 - Improved test readability and failure messages
+
+## Day 4 – Mocking with Moq
+
+- Installed Moq (latest stable version)
+- Created IUserRepository and UserService with dependency injection
+- Key Moq features demonstrated:
+  - Setup + Returns for value returning methods
+  - Setup + Throws for exception simulation
+  - Verify(Times.Once/Never/Exactly) for interaction verification
+  - Callback for side-effect tracking
+  - It.Is / It.IsAny for parameter matching
+- Combined Moq with FluentAssertions for expressive tests
+
+**Next**: Day 5 – Generating test data with AutoFixture
