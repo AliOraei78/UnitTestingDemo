@@ -1,5 +1,6 @@
 ﻿using CoreLogic;
 using Xunit;
+using FluentAssertions;
 
 namespace CoreLogic.Tests;
 
@@ -45,11 +46,7 @@ public class CalculatorTests : IDisposable
         // Arrange
         var calc = new Calculator();
 
-        // Act
-        int result = calc.Add(a, b);
-
-        // Assert
-        Assert.Equal(expected, result);
+        calc.Add(a, b).Should().Be(expected);
     }
 
     [Fact]
@@ -59,7 +56,8 @@ public class CalculatorTests : IDisposable
         var calc = new Calculator();
 
         // Act & Assert
-        Assert.Throws<DivideByZeroException>(() => calc.Divide(10, 0));
+        Action act = () => calc.Divide(10, 0);
+        act.Should().Throw<DivideByZeroException>().WithMessage("Denominator cannot be zero.");
     }
 
     [Theory]
@@ -115,5 +113,60 @@ public class CalculatorTests : IDisposable
 
         // Assert
         Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void GetEvenNumbersUpTo_ReturnsCorrectSequence()
+    {
+        var calc = new Calculator();
+
+        var result = calc.GetEvenNumbersUpTo(10).ToList();
+
+        result.Should().BeEquivalentTo(new[] { 0, 2, 4, 6, 8, 10 });
+    }
+
+    [Fact]
+    public void GetEvenNumbersUpTo_ReturnsCorrectSequenceInOrder()
+    {
+        var calc = new Calculator();
+
+        var result = calc.GetEvenNumbersUpTo(10).ToList();
+
+        result.Should().Equal(0, 2, 4, 6, 8, 10 );
+    }
+
+    [Fact]
+    public void Calculator_BasicOperations_ChainExample()
+    {
+        var calc = new Calculator();
+
+        calc.Add(5, 3)
+            .Should()
+            .Be(8)
+            .And
+            .BePositive()
+            .And
+            .NotBe(0);
+
+        calc.Divide(20, 4)
+            .Should()
+            .Be(5)
+            .And
+            .BeGreaterThan(0);
+    }
+
+    [Fact]
+    public void List_Chain()
+    {
+        var numbers = new List<int> { 2, 4, 6, 8 };
+
+        numbers.Should()
+               .NotBeEmpty()
+               .And
+               .HaveCount(4)
+               .And
+               .OnlyContain(n => n % 2 == 0)
+               .And
+               .ContainInOrder(2, 4);
     }
 }

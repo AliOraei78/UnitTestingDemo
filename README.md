@@ -19,4 +19,14 @@
   - Exception testing with Assert.Throws
 - Demonstrated test lifecycle with constructor and IDisposable
 
-**Coverage so far**: Basic methods fully tested
+## Day 3 – FluentAssertions
+
+- Installed FluentAssertions (latest stable version)
+- Replaced standard xUnit assertions with fluent syntax
+- Key assertions covered:
+  - Should().Be()
+  - Should().BeEquivalentTo() vs Should().Equal()
+  - Should().Throw<T>() / ThrowExactly<T>() + WithMessage
+  - Collection assertions: HaveCount, Contain, OnlyContain, ContainInOrder
+- Demonstrated chaining: .And for multiple assertions
+- Improved test readability and failure messages

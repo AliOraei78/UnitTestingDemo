@@ -19,4 +19,12 @@ public class Calculator
     {
         return number % 2 == 0;
     }
+
+    public IEnumerable<int> GetEvenNumbersUpTo(int max)
+    {
+        for (int i = 0; i <= max; i += 2)
+        {
+            yield return i;
+        }
+    }
 }
