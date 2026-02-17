@@ -42,5 +42,3 @@
   - Callback for side-effect tracking
   - It.Is / It.IsAny for parameter matching
 - Combined Moq with FluentAssertions for expressive tests
-
-**Next**: Day 5 – Generating test data with AutoFixture
