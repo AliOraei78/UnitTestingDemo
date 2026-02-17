@@ -42,3 +42,21 @@
   - Callback for side-effect tracking
   - It.Is / It.IsAny for parameter matching
 - Combined Moq with FluentAssertions for expressive tests
+
+## Day 6 – Professional Logging with Serilog
+
+- Installed: Serilog, Serilog.Sinks.Console, Serilog.Sinks.File, Serilog.Sinks.InMemory (+ Assertions)
+- Configured global Logger with minimum Debug level, console & daily rolling file sinks
+- Integrated structured logging (ForContext, {Property}) in UserService
+- Used appropriate log levels: Debug, Information, Warning, Error
+- Tested logging behavior in unit tests using InMemorySink + FluentAssertions
+
+## Day 7 – Logging Visualization with Seq
+
+- Installed Seq locally (via MSI installer or Docker)
+- Added Serilog.Sinks.Seq NuGet package
+- Extended LoggerConfig to include Seq sink[](http://localhost:5341)
+- Verified end-to-end logging: logs appear in Seq dashboard in real-time
+- Demonstrated basic queries/filters: Level=, property filters, text search, signals
+- Explored structured properties and event details in Seq UI
+
