@@ -2,9 +2,11 @@
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Sinks.Seq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CoreLogic.Logging;
 
+[ExcludeFromCodeCoverage]
 public static class LoggerConfig
 {
     private static readonly LoggingLevelSwitch _levelSwitch = new LoggingLevelSwitch();

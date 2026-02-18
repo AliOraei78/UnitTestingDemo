@@ -60,3 +60,12 @@
 - Demonstrated basic queries/filters: Level=, property filters, text search, signals
 - Explored structured properties and event details in Seq UI
 
+## Day 8 – Measuring and Improving Code Coverage (>80%)
+
+- Installed: coverlet.collector, coverlet.msbuild (optional), dotnet-reportgenerator-globaltool
+- Collected coverage via: dotnet test --collect:"XPlat Code Coverage"
+- Generated readable HTML reports with ReportGenerator
+- Interpreted Line, Branch, and Method coverage metrics
+- Applied strategies: edge cases, exception paths, parameterized tests, exclusions
+- Achieved >80% coverage on core classes (Calculator, UserService)
+- (Optional) Installed Fine Code Coverage VS extension for editor highlighting
