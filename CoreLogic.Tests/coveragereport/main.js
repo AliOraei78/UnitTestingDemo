@@ -215,7 +215,7 @@ var assemblies = [
     "classes": [
       { "name": "CoreLogic.Calculator", "rp": "CoreLogic_Calculator.html", "cl": 17, "ucl": 0, "cal": 17, "tl": 30, "cb": 4, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "CoreLogic.User", "rp": "CoreLogic_User.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "CoreLogic.UserService", "rp": "CoreLogic_UserService.html", "cl": 34, "ucl": 1, "cal": 35, "tl": 61, "cb": 8, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "CoreLogic.UserService", "rp": "CoreLogic_UserService.html", "cl": 34, "ucl": 1, "cal": 35, "tl": 73, "cb": 8, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

@@ -35,7 +35,7 @@ public class RefactoredUserServiceTest
     public void RegisterNewUser_InvalidName_UsesValidator_LogsError_DoesNotSave(
     [Frozen] Mock<IUserRepository> mockRepo,
     [Frozen] Mock<IUserValidator> mockValidator,
-    UserService service)
+    RefactoredUserService service)
     {
         mockValidator
             .Setup(v => v.IsValidRegistration(" ", It.IsAny<int>(), out It.Ref<string>.IsAny))
@@ -45,5 +45,37 @@ public class RefactoredUserServiceTest
 
         success.Should().BeFalse();
         mockRepo.Verify(r => r.SaveUser(It.IsAny<User>()), Times.Never());
+    }
+
+    [Theory]
+    [AutoMoqData]
+    public void RegisterNewUser_ValidData_UsesValidator_SavesUser_ReturnsTrue(
+    [Frozen] Mock<IUserRepository> mockRepo,
+    [Frozen] Mock<IUserValidator> mockValidator,
+    RefactoredUserService service)
+    {
+        // Arrange
+        string name = "John Doe";
+        int age = 25;
+        string noError = string.Empty;
+
+        // Setup validator to return true for valid input
+        mockValidator
+            .Setup(v => v.IsValidRegistration(name, age, out noError))
+            .Returns(true);
+
+        // Setup repository to return true when saving
+        mockRepo
+            .Setup(r => r.SaveUser(It.IsAny<User>()))
+            .Returns(true);
+
+        // Act
+        var success = service.RegisterNewUser(name, age);
+
+        // Assert
+        success.Should().BeTrue();
+
+        // Verify that SaveUser was called exactly once with a user object having the correct data
+        mockRepo.Verify(r => r.SaveUser(It.Is<User>(u => u.Name == name && u.Age == age)), Times.Once());
     }
 }
