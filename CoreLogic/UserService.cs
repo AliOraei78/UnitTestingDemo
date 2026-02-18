@@ -58,4 +58,16 @@ public class UserService
 
         return saved;
     }
+
+    public User? GetValidatedUser(int id)
+    {
+        if (id <= 0)
+            throw new ArgumentOutOfRangeException(nameof(id), "User ID must be positive.");
+
+        var user = _repository.GetUserById(id);
+        if (user == null)
+            throw new KeyNotFoundException($"User with ID {id} not found.");
+
+        return user;
+    }
 }
