@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Solution Items/">
+    <File Path=".gitub/workflows/dotnet-ci.yml" />
     <File Path="README.md" />
   </Folder>
   <Project Path="CoreLogic.Tests/CoreLogic.Tests.csproj" />
