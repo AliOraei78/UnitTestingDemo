@@ -69,3 +69,16 @@
 - Applied strategies: edge cases, exception paths, parameterized tests, exclusions
 - Achieved >80% coverage on core classes (Calculator, UserService)
 - (Optional) Installed Fine Code Coverage VS extension for editor highlighting
+
+## Day 9 – Advanced Topics & Full Integration
+
+- Combined xUnit + FluentAssertions + Moq + AutoFixture in complex scenarios
+- Covered important Exception paths and Edge Cases
+- Refactored UserService for better testability:
+  - Extracted IUserValidator (SRP)
+  - Applied Dependency Inversion (constructor injection)
+- Reviewed maintainability best practices:
+  - Naming convention
+  - Avoid over-verification
+  - Leverage AutoFixture heavily
+  - Keep tests focused and readable
